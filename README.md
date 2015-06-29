@@ -1,3 +1,6 @@
 # Arturrito
 TP Final
-Nicolás Hernán Agüero
+
+Alumnos:
+- Nicolás Hernán Agüero
+- Rodrigo Ezequiel Díaz
