@@ -1,0 +1,23 @@
+{
+  "name": "Arturrito",
+  "version": "1.0.0",
+  "description": "TP Final",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/godiaz/Arturrito.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/godiaz/Arturrito/issues"
+  },
+  "homepage": "https://github.com/godiaz/Arturrito",
+  "dependencies": {
+    "express": "^4.13.0",
+    "mongodb": "^2.0.35"
+  }
+}
