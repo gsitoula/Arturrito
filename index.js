@@ -3,7 +3,7 @@ var app = express();
 
 app.use(express.static('public'));
 
-//
+
 app.get('/getuser', function (req, res) {
   res.send("user");
 });
