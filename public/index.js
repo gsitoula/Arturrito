@@ -20,5 +20,6 @@ $(document).ready(function() {
     $.getJSON("/getcompras", function(result) {
         console.log(result);
     });
+    
 
 })
