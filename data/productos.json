@@ -1,0 +1,71 @@
+{
+	_id: '1',
+	name: 'Arduino uno',
+	description: 'Sarasa',
+	cat: 'Placa base'
+}
+
+{
+	_id: '2',
+	name: 'Arduino dos',
+	description: 'Sarasa2',
+	cat: 'Placa base'
+}
+
+{
+	_id: '3',
+	name: 'Arduino trés',
+	description: 'Sarasa3',
+	cat: 'Placa base'
+}
+
+{
+	_id: '4',
+	name: 'Arduino four',
+	description: 'Sarasa4',
+	cat: 'Placa base'
+}
+
+{
+	_id: '5',
+	name: 'Arduino five',
+	description: 'Sarasa5',
+	cat: 'Placa base'
+}
+
+{
+	_id: '6',
+	name: 'Rueda',
+	description: 'Sarasa6',
+	cat: 'Ruedas'
+}
+
+{
+	_id: '7',
+	name: 'Cámara',
+	description: 'Sarasa7',
+	cat: 'Video'
+}
+
+{
+	_id: '8',
+	name: 'Parlante',
+	description: 'Sarasa8',
+	cat: 'Parlantes'
+}
+
+{
+	_id: '9',
+	name: 'Control Remoto',
+	description: 'Sarasa9',
+	cat: 'Remote'
+}
+
+{
+	_id: '10',
+	name: 'Bateria',
+	description: 'Sarasa10',
+	cat: 'Battery'
+}
+
+

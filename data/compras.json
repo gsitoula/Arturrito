@@ -1,0 +1,31 @@
+{
+	_idUs: 'a1',
+	_id: 'c1',
+	productos: ['Arduino uno', 'ruedas'],
+	finalizada: true
+}
+
+{
+	_idUs: 'a2',
+	_id: 'c2',
+	productos: ['Arduino trés', 'Rueda', 'Parlante', 'Control Remoto'],
+	finalizada: true
+}
+
+{
+	_idUs: 'a2',
+	_id: 'c3',
+	productos: ['Arduino five', 'Cámara'],
+	finalizada: false
+}
+
+{
+	_idUs: 'a3',
+	productos: ['Bateria', 'Control Remoto'],
+	_id: 'c4',
+	finalizada: true
+}
+
+
+
+

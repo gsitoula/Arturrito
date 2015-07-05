@@ -5,4 +5,5 @@ Alumnos:
 
 - Nicolás Hernán Agüero
 - Rodrigo Ezequiel Díaz
--Dylan Szejnblum Andrade
+- Dylan Szejnblum Andrade
+- Gastón "El loco" Sitoula
