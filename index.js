@@ -1,37 +1,43 @@
+var dbManager = require('./dbManager.js');
 var express = require('express');
 var app = express();
-var fs = require('fs');
 
 app.use(express.static('public'));
 
 app.get('/getuser', function (req, res) {
   res.setHeader('Content-Type', 'application/json');
-  fs.readFile('./data/usuarios.json', function (err, data) {
-	     if (err){ throw err; }
-	        console.log("INFO: sending usuarios data... ");
-		    console.dir(JSON.parse(data.toString()));
-		    res.send(data.toString());
-  });
+
+  var callback = function (data){
+  	res.send(data);
+  };
+
+  dbManager.getUsers(callback);
 });
 
-app.get('/getproduct', function (req, res) {
+app.get('/getproducts', function (req, res) {
 	res.setHeader('Content-Type', 'application/json');
-
-	fs.readFile('./data/productos.json', function (err, data) {
-	     if (err){ throw err; }
-	        console.log("INFO: sending productos data... ");
-		    console.dir(JSON.parse(data.toString()));
-		    res.send(data.toString());
-	});
+    dbManager.getProducts(function (data){
+  	res.send(data);
+  });
 });
 
 app.get('/getcompras', function (req, res) {
 	res.setHeader('Content-Type', 'application/json');
-	fs.readFile('./data/compras.json', function (err, data) {
+	dbManager.getCompras(function (data){
+  	res.send(data);
+  });
+});
+
+app.post('/login', function (req, res) {
+	res.setHeader('Content-Type', 'application/json');
+	fs.readFile('./data/users.json', function (err, data) {
 		  if (err){ throw err; }
-	        console.log("INFO: sending compras data... ");
-		    console.dir(JSON.parse(data.toString()));
-		    res.send(data.toString());
+	        if(json.parse(data.toString()).username === 'pepe'){
+		       res.send(data);
+	        }
+		    else {
+		    	res.send(false);
+		    }
 	});
 });
 
@@ -46,7 +52,7 @@ var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('INIT: Server UP on ' +  host + ":"+ port);
+  console.log('INIT: Server listening on ' +  host + ":"+ port);
 
 });
 

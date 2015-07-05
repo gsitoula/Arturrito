@@ -57,7 +57,7 @@ footer{
 	height: 50px;
 	background: url(images/c3po.gif) no-repeat;
 	background-size: 125%;
-	
+
 	}
 .circular.answer-img{
 	width: 25px;
@@ -106,7 +106,7 @@ div.nav-right a p{
 	margin-top: 20px;
 }
 .nav-left img{
-	width:50px; 
+	width:50px;
 	height:50px;
 }
 .nav-left .tit-princ{
@@ -207,7 +207,7 @@ div.nav-right a p{
     border-radius:3px;
     -webkit-transition: all 500ms ease-in;
     -moz-transition: all 500ms ease-in;
-    transition: all 500ms ease-in;    
+    transition: all 500ms ease-in;
 }
 .movedown {
     margin: 0 auto;
@@ -222,10 +222,10 @@ div.nav-right a p{
     width:0;
     height:0;
 }
-.modalmask:target .movedown{       
+.modalmask:target .movedown{
     margin:10% auto;
 }
-.modalmask:target .rotate{     
+.modalmask:target .rotate{
     transform: rotate(360deg) scale(1,1);
     -webkit-transform: rotate(360deg) scale(1,1);
 }
@@ -260,7 +260,7 @@ div.nav-right a p{
 	padding:20px;
 	background-color: #1D7257;
 	text-decoration: none;
-	color:#fff;	
+	color:#fff;
 }
 .boton a{
 	text-decoration: none;
@@ -300,4 +300,42 @@ a:hover.tooltips span {
 	padding:30px;
   z-index: 999;
   margin-bottom: 30px;
+}
+
+/* products list style*/
+
+.products-list {
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    width: 70%;
+}
+
+.products-list-item {
+	-webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    width: 100%;
+    height: 40px;
 }
