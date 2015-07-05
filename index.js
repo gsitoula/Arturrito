@@ -1,4 +1,4 @@
-var dbManager = require('./dbManager.js');
+var dataManager = require('./dataManager.js');
 var express = require('express');
 var app = express();
 
@@ -11,19 +11,19 @@ app.get('/getuser', function (req, res) {
   	res.send(data);
   };
 
-  dbManager.getUsers(callback);
+  dataManager.getUsers(callback);
 });
 
 app.get('/getproducts', function (req, res) {
 	res.setHeader('Content-Type', 'application/json');
-    dbManager.getProducts(function (data){
+    dataManager.getProducts(function (data){
   	res.send(data);
   });
 });
 
 app.get('/getcompras', function (req, res) {
 	res.setHeader('Content-Type', 'application/json');
-	dbManager.getCompras(function (data){
+	dataManager.getCompras(function (data){
   	res.send(data);
   });
 });
