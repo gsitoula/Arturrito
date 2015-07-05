@@ -25,7 +25,7 @@ app.get('/getproduct', function (req, res) {
 	});
 });
 
-app.post('/getcompras', function (req, res) {
+app.get('/getcompras', function (req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	fs.readFile('./data/compras.json', function (err, data) {
 		  if (err){ throw err; }
