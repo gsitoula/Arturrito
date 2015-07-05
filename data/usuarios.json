@@ -1,23 +1,22 @@
-{
-	_id: 'a1',
-	username: 'gasti1',
-	pass: 'lalala'
-}
-
-{
-	_id: 'a2',
-	username: 'felix1'
-	pass: 'sarasa'
-}
-
-{
-	_id: 'a3',
-	username: 'sant1',
-	pass: 'sarlanga'
-}
-
-{
-	_id: 'a4',
-	username: 'god1',
-	pass: 'sarlanga'
+{ "users" : 
+   [{
+	"_id": "a1",
+	"username": "gasti1",
+	"pass": "lalala"
+   },
+   {
+	"_id": "a2",
+	"username": "felix1",
+	"pass": "sarasa"
+   },
+   {
+	"_id": "a3",
+	"username": "sant1",
+	"pass": "sarlanga"
+   },
+    {
+	 "_id": "a4",
+	 "username": "god1",
+	 "pass": "sarlanga"
+    }]
 }
