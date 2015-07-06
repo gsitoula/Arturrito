@@ -29,9 +29,16 @@ var getUsers = function(callback){
     });
 };
 
+var getUserCart = function(callback){
+	fs.readFile('./data/carrito.json', function (err, data) {
+		if (err) { throw err; }
+			callback(data.toString());
+	});
+};
 
 module.exports = {
 	getProducts: getProducts,
 	getCompras: getCompras,
-	getUsers: getUsers
+	getUsers: getUsers,
+	getUserCart: getUserCart
 };
