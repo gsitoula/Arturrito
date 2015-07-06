@@ -28,6 +28,13 @@ app.get('/getcompras', function (req, res) {
   });
 });
 
+app.get('/getUserCart', function (req, res){
+	res.setHeader('Content-Type', 'application/json');
+	dataManager.getUserCart(function (data){
+	res.send(data);
+	});	
+});
+
 app.post('/login', function (req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	fs.readFile('./data/users.json', function (err, data) {
