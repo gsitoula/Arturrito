@@ -1,121 +1,90 @@
+function produkts(callback) {
 
-var productillos = function(callback) {
-
-    $.getJSON("/getproducts", function(result) {
-        var html = '<div> ' +
-            '<ul class="products-list">';
-
+    $.getJSON("/getProducts", function(result) {
+        var $html = $('<ul class="cart-list"></ul>');
 
 
         result.Products.forEach(function(data) {
 
-            var elem =
-
-                '<li class="products-list-item"' +
+            var $elem = '<li class="products-list-item"' +
                 'id="' + data._id + '">' +
-                '<div>' + data.name + '</div>' +
-                '<div>' + '<button ' + ' id="' + data._id + '" ' + '> Comprar </button>'
-            '</div>'
+                '<div>' + data.name + '</div>'
             '</li>';
 
-            html += elem;
+            $elem = $($elem);
+
+            var $button = $('<div>' + '<button ' + ' id="' + data._id + '" ' + '> Agregar al Carrito </button>').click(function(e) {
+
+                $.getJSON( "/getUserCart", function( data ) {
+                var items = [];
+                $.each( data, function( key, val ) {
+                items.push( "<li id='" + key + "'>" + val + "</li>" );
+                });
+ 
+                $( "<ul/>", {
+                "class": "my-new-list",
+                html: items.join( "" )
+                }).appendTo( "body" );
+            });
+
+
+            });
+
+            $elem.append($button);
+            $html.append($elem);
         });
 
-        html += '</ul>' +
-            '</div>';
 
-        callback(html);
+
+        callback($html);
+
     });
+
 };
 
+var rat = [];
 
-var usrCompra = function(callback) {
+
+function getUserCart(callback) {
 
     $.getJSON("/getUserCart", function(result) {
         var $html = $('<ul class="cart-list"></ul>');
 
+
         result.Cart.forEach(function(data) {
 
-            var $elem ='<li class="cart-list-item"' +
+            var $elem = '<li class="cart-list-item"' +
                 'id="' + data._id + '">' +
-                '<div>' + data.productos + '</div>'
-                '</li>'; 
+                '<div>' + data.name + '</div>'
+            '</li>';
 
-                $elem = $($elem); 
+            $elem = $($elem);
 
-            var $button = $('<div>' + '<button ' + ' id="'+ data._id +'" ' + '> Comprar </button>').click(function (e){
-                  var e = $(this); 
-                  e.attr('id');  
-            }); 
+
+            var $button = $('<div>' + '<button ' + ' id="' + data._id + '" ' + '> Eliminar </button>').click(function(e) {
+                console.log(rat);
+
+
+            });
 
             $elem.append($button);
-        }); 
-
-        //jquery transform
-        $html = $($html);
+            $html.append($elem);
+        });
 
         callback($html);
+
     });
 
 };
 
+
 $(document).ready(function() {
-    productillos(function(dom) {
+
+    produkts(function(dom) {
         $('.products-module').append(dom);
     });
-    usrCompra(function(dom) {
+    getUserCart(function(dom) {
         $('.cart-module').append(dom);
     });
 
-
 });
-
-// var carrito = function (callback){
-//     $.getJSON("/getcompras", function (result) {
-//        var html = '<div> '+
-//           '<ul class="compras-list">';
-
-//        result.Compras.forEach(function (data){
-//             var elem = '<li class="compras-list-item"' +
-//              'id="'+ data._id +'">' +
-//              '<div>'+ data.productos + '</div>' +
-//             '</li>';
-
-//             html += elem;
-//        });
-
-//        html += '</ul>' +
-//        '</div>';
-
-//         callback(html);
-//     });
-// };
-
-// carrito(function (dom){
-//   $('.carrito-compras').append(dom);
-// });
-
-//Formulatio de Validación
-
-// function validateForm() {
-//         var username = document.getElementById(/*"username"*/).value;
-//         var password = document.getElementById(/*"password"*/).value;
-//         if (username == null || username == "") {
-//             alert("Por favor, poné tu Nombre de Usuario.");
-//             return false;
-//         }
-//         if (password == null || password == "") {
-//             alert("Porque favor, poné tu contraseña.");
-//             return false;
-//         }
-//         alert("Conectado");
-//         onSuccsess(client);
-//     }
-
-//     if (password == null || password == "") {
-//         alert("Porque favor, poné tu contraseña.");
-//         return false;
-//     }
-//     alert("Conectado");
-//     onSuccsess(client);
-// }
