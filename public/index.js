@@ -14,12 +14,17 @@ function produkts(callback) {
             $elem = $($elem);
 
             var $button = $('<div>' + '<button ' + ' id="' + data._id + '" ' + '> Agregar al Carrito </button>').click(function(e) {
-                  
-                console.log(data);
-                $.getJSON( "/getUserCart", function( data ) {
-                        console.log(data);
+
+                var hora = data;
+                //console.log(hora);
+                $.getJSON("/getUserCart", function(data) {
                         
-            });
+                        
+                        var jean = data.["Cart"].push(hora);
+                        console.log(jean);
+                    
+
+                });
 
 
             });
